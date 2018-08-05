@@ -1,2 +1,2 @@
-# An-lisis-Num-rico
+# Analisis Numerico
 Talleres o parciales de análisis numérico
