@@ -1,0 +1,25 @@
+#install.packages("Matrix")
+lagrange = function(x,y,a){
+  n = length(x)
+  if(a < min(x) || max(x) < a) stop("No está interpolando")
+  X = matrix(rep(x, times=n), n, n, byrow=T)
+  mN = a - X; diag(mN) = 1
+  mD = X - t(X); diag(mD) = 1
+  Lnk = apply(mN, 1, prod)/apply(mD, 2, prod)
+  sum(y*Lnk)
+}
+# Instalar el paquete PolynomF
+# install.packages("PolynomF")
+require(PolynomF)
+# --- Prueba
+x = c( 0.0,0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0)
+y = c(1.00,1.105, 1.221, 1.349, 1.491, 1.648, 1.822, 2.013, 2.225, 2.459, 2.718)
+lagrange(x[0:2],y[0:2],1.102)
+
+datx = x[0:7]; daty = y[0:7]
+polyAjuste = poly.calc(datx,daty)
+polyAjuste
+polyAjuste(-0.2112)
+plot(datx,daty, pch=19, cex=1, col = "red", asp=1) # Representación con puntos
+
+curve(polyAjuste,add=T,lty=3, lwd=3)
