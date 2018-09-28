@@ -30,7 +30,7 @@ draw <- function(x,y) {
     fy <- function(x) (sy[1,i] + sy[2,i]*(x-t[i]) + sy[3,i]*(x-t[i])^2 + sy[4,i]*(x-t[i]))
     dat$y=fy(dat$t)
     dat$x=fx(dat$t)
-   ## points(dat$x,dat$y,type='l', col='blue')
+    points(dat$x,dat$y,type='l', col='blue')
   }
 }
 draw(x,y)
