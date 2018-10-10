@@ -1,6 +1,6 @@
 
 f = function(x){
-  return((1-(x^2))^(1/2))
+  return(sin(x))
 }
 
 longitudCurva = function(a,b,n){
@@ -16,11 +16,12 @@ longitudCurva = function(a,b,n){
   }
   return(c(suma,datos))
 }
-a = -1
-b = 1
+a = 0
+b = 2*pi
 n = 1000
 m=10
 l = longitudCurva(a,b,n)
+print("la longitud de curva es ",l)
 
 cat(l[1])
 datos = l[2:length(l)]
@@ -38,4 +39,7 @@ graficar = function(datos,a,b,paso,raro){
 }
 
 graficar(datos,1,-1,n,m)
-datos
+fun<- function(x){
+  return(sqrt(1+(cos(x))^2))
+} 
+#datos

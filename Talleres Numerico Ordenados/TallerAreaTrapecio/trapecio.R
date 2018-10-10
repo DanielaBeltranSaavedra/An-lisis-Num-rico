@@ -1,3 +1,4 @@
+trapecios=10
 x=seq(0,2*pi,length=100)
 plot(x,cos(x),type="l",col="blue",lwd=3)
 lines(x,sin(x),col="green",lwd=3)
@@ -8,6 +9,7 @@ areaSeno<-function(x1){
     return(sin(x1))
   
 }
+
 areaCoseno<-function(x2){
   return(cos(x2))
   
@@ -51,11 +53,14 @@ for(i in 1:trapecios){
     arr[i]=abs(ysen[i*amplitud])+abs(ysen[(i+1)*amplitud])
   }
   contador=((arr[i]/2)*amplitud)*0.07
-  
-  print (contador)
+  if(i==1){
+    print (contador)
+    cat("la suma de las areas son ",contador)
+    
+  }
   sum=(sum+contador)
+  
 }
-cat("la suma de las areas son ",sum)
 
 
 
