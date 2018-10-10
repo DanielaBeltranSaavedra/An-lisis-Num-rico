@@ -6,7 +6,7 @@ points(x,y,type="l",col="blue",lwd=5)
 grid(lty=1);
 
 copo=function(iteraciones, tamanio){
-  iteraciones=iteraciones+1
+
   retorno=c(1:iteraciones)
   for (i in retorno) {
     if(i==1){
