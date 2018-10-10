@@ -9,7 +9,7 @@ copo=function(iteraciones, tamanio){
   iteraciones=iteraciones+1
   retorno=c(1:iteraciones)
   for (i in retorno) {
-    if(i==1){git
+    if(i==1){
       retorno[i]=tamanio
     }
     else{
